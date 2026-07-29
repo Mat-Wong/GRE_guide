@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRE 备考台</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand">
+        <div class="brand-mark">G</div>
+        <div>
+          <div class="brand-title">GRE 备考台</div>
+          <div class="brand-subtitle">Local Study Console</div>
+        </div>
+      </div>
+
+      <nav class="nav-list">
+        <button class="nav-btn active" data-view="dashboard" type="button">
+          <span class="nav-icon">⌂</span><span>总览</span>
+        </button>
+        <button class="nav-btn" data-view="vocab" type="button">
+          <span class="nav-icon">Aa</span><span>背词</span>
+        </button>
+        <button class="nav-btn" data-view="fill" type="button">
+          <span class="nav-icon">□</span><span>填空</span>
+        </button>
+        <button class="nav-btn" data-view="math" type="button">
+          <span class="nav-icon">∑</span><span>数学</span>
+        </button>
+        <button class="nav-btn" data-view="reading" type="button">
+          <span class="nav-icon">¶</span><span>阅读</span>
+        </button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="viewEyebrow">Overview</p>
+          <h1 id="viewTitle">总览</h1>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-btn" id="exportBtn" type="button">导出进度</button>
+          <button class="danger-btn" id="resetBtn" type="button">重置进度</button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-dashboard" aria-labelledby="viewTitle"></section>
+      <section class="view" id="view-vocab" aria-labelledby="viewTitle"></section>
+      <section class="view" id="view-fill" aria-labelledby="viewTitle"></section>
+      <section class="view" id="view-math" aria-labelledby="viewTitle"></section>
+      <section class="view" id="view-reading" aria-labelledby="viewTitle"></section>
+    </main>
+  </div>
+
+  <script src="data/gre-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
