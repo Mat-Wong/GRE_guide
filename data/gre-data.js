@@ -93392,8 +93392,8 @@ window.GRE_DATA = {
     },
     {
       "id": "core",
-      "name": "核心词库",
-      "description": "核心词条集合，适合快速复盘。",
+      "name": "GRE 救命800词",
+      "description": "GRE 救命800词完整词库，默认全部纳入不背单词自制生词本。",
       "cards": [
         {
           "id": "core-generated-001",

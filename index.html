@@ -24,6 +24,9 @@
         <button class="nav-btn" data-view="vocab" type="button">
           <span class="nav-icon">Aa</span><span>背词</span>
         </button>
+        <button class="nav-btn" data-view="wordbook" type="button">
+          <span class="nav-icon">+</span><span>生词本</span>
+        </button>
         <button class="nav-btn" data-view="fill" type="button">
           <span class="nav-icon">□</span><span>填空</span>
         </button>
@@ -32,6 +35,9 @@
         </button>
         <button class="nav-btn" data-view="reading" type="button">
           <span class="nav-icon">¶</span><span>阅读</span>
+        </button>
+        <button class="nav-btn" data-view="section" type="button">
+          <span class="nav-icon">S</span><span>Section 练习</span>
         </button>
       </nav>
     </aside>
@@ -44,19 +50,31 @@
         </div>
         <div class="top-actions">
           <button class="ghost-btn" id="exportBtn" type="button">导出进度</button>
+          <button class="ghost-btn" id="importBtn" type="button">导入进度</button>
+          <input id="importProgressInput" type="file" accept=".json,application/json" hidden>
           <button class="danger-btn" id="resetBtn" type="button">重置进度</button>
         </div>
       </header>
 
       <section class="view active" id="view-dashboard" aria-labelledby="viewTitle"></section>
       <section class="view" id="view-vocab" aria-labelledby="viewTitle"></section>
+      <section class="view" id="view-wordbook" aria-labelledby="viewTitle"></section>
       <section class="view" id="view-fill" aria-labelledby="viewTitle"></section>
       <section class="view" id="view-math" aria-labelledby="viewTitle"></section>
       <section class="view" id="view-reading" aria-labelledby="viewTitle"></section>
+      <section class="view" id="view-section" aria-labelledby="viewTitle"></section>
     </main>
   </div>
 
   <script src="data/gre-data.js"></script>
+  <script src="data/gre-math-vocab.js"></script>
+  <script src="data/original-practice.js"></script>
+  <script src="data/original-math-practice.js"></script>
+  <script src="data/gre-explanations.js"></script>
+  <script src="data/gre-option-meanings.js"></script>
+  <script src="data/gre-reading-lookup-meanings.js"></script>
+  <script src="data/gre-source-examples.js"></script>
+  <script src="data/gre-curated-vocabulary.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
