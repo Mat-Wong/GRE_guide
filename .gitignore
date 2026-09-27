@@ -9,3 +9,9 @@ tmp/
 __pycache__/
 .env
 .env.*
+*api-key*
+*api_key*
+*apikey*
+credentials*.json
+*.pem
+*.key

@@ -125,7 +125,7 @@
         studyMeaning: enriched.meaning,
         englishDefinition: enriched.englishDefinition,
         example: enriched.example,
-        exampleSource: "LLM 词义例句",
+        exampleSource: "词义对应例句",
       };
     }
     const located = sourceExamples[card.id];
@@ -153,7 +153,7 @@
   function renderGeneratedAnalysis(id, fallback, kind = "fill") {
     const item = generatedExplanations[kind]?.[id];
     if (!item) {
-      return `<div class="analysis-pending">完整解析正在生成；当前仅有答案来源：${renderExplanationText(fallback)}</div>`;
+      return `<div class="analysis-pending">本地资料暂无完整解析；当前仅有答案来源：${renderExplanationText(fallback)}</div>`;
     }
     if (kind === "reading") {
       const optionTranslations = Array.isArray(item.option_translations) && item.option_translations.length
@@ -214,7 +214,7 @@
   function renderPassageAnalysis(passageId, revealed = false) {
     if (!revealed) return "";
     const item = generatedExplanations.passages?.[passageId];
-    if (!item) return '<p class="analysis-pending">全文翻译与篇章生词正在生成。</p>';
+    if (!item) return '<p class="analysis-pending">本地资料暂无全文翻译与篇章生词。</p>';
     return `
       <details class="passage-analysis" open>
         <summary>全文翻译与篇章生词</summary>
@@ -676,7 +676,7 @@
         englishDefinition: candidate.englishDefinition || "",
         mnemonic: `这个词在当前填空与阅读题库中共出现 ${candidate.count} 次。`,
         example: candidate.generatedExample || candidate.contexts[0] || "",
-        exampleSource: "LLM 词义例句",
+        exampleSource: "词义对应例句",
         source: candidate.sources.map((source) => source === "fill" ? "填空" : "阅读").join(" + "),
         tags: ["个人生词", `题库出现 ${candidate.count} 次`],
         occurrenceCount: candidate.count,
@@ -1224,8 +1224,8 @@
     const locked = deck.locked || deck.cards.every((card) => card.needsGeneration);
     return `
       <div class="empty-state">
-        <h2>${locked ? "词库待生成" : "当前队列为空"}</h2>
-        <p>${locked ? "这批词只有英文原词，还需要补全释义、助记和例句。" : "切换队列或清空搜索条件后继续。"}</p>
+        <h2>${locked ? "词条资料不完整" : "当前队列为空"}</h2>
+        <p>${locked ? "这批词只有英文原词，当前本地数据缺少释义、助记和例句。" : "切换队列或清空搜索条件后继续。"}</p>
       </div>
     `;
   }
@@ -1487,7 +1487,7 @@
           <h2>${labels[type]}</h2>
           <span class="section-meta">共 ${allItems.length} 组；当前显示 ${items.length} 组；题干与选项来自用户提供的原始 PDF</span>
         </div>
-        ${items.length ? `<div class="question-list">${items.map((item, index) => renderQuestion(type, item, index)).join("")}</div>` : (type === "math" ? '<div class="empty-state"><h2>当前没有已标注的数学难题</h2><p>简单生成题已全部移除；导入难题后可在作答后点击题干术语查义。</p></div>' : '<div class="empty-state"><h2>当前队列为空</h2><p>切换筛选条件继续练习。</p></div>')}
+        ${items.length ? `<div class="question-list">${items.map((item, index) => renderQuestion(type, item, index)).join("")}</div>` : (type === "math" ? '<div class="empty-state"><h2>当前没有符合筛选条件的数学题</h2><p>切换筛选条件后继续练习。</p></div>' : '<div class="empty-state"><h2>当前队列为空</h2><p>切换筛选条件继续练习。</p></div>')}
       </section>
     `;
   }

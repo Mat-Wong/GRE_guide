@@ -2,7 +2,7 @@ window.GRE_ORIGINAL_MATH_PRACTICE = {
   "meta": {
     "source": "数学900题.pdf",
     "selection": "容易出错的中等偏上与困难题；排除基础题、缺图题、抽取不完整题及重复题",
-    "answerVerification": "由 ASU openai/o3 与 openai/gpt5_6_sol 分别按选项原文独立重算；仅保留结论一致题；PDF 未包含官方答案页",
+    "answerVerification": "按选项原文独立重算并交叉核对；仅保留结论一致题；PDF 未包含官方答案页",
     "count": 32,
     "explanationStyle": "2-4句简明中文：关键计算、结论、一个易错点"
   },
